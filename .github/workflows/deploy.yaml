@@ -20,7 +20,7 @@ jobs:
       - name: Clone widgets repository
         uses: actions/checkout@v4
         with:
-          path: widgets
+          path: betty
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v1
@@ -52,6 +52,6 @@ jobs:
           RSS_DESCRIPTION: ${{ vars.RSS_DESCRIPTION }}
           GOOGLE_AUTH_CALLBACK: ${{ vars.GOOGLE_AUTH_CALLBACK }}
         run: |
-          cd widgets/
+          cd betty/
           bun i
           bun scripts/migrator.ts
