@@ -45,6 +45,5 @@ jobs:
           S3_FORCE_PATH_STYLE: ${{ vars.S3_FORCE_PATH_STYLE }}
         run: |
           cd betty/
-          bun remove puppeteer
           bun i
           bun scripts/render.ts
