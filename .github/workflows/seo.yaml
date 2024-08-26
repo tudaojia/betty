@@ -26,7 +26,6 @@ jobs:
 
       - name: Set up Puppeteer
         run: |
-          bun remove puppeteer
           sudo apt-get update
           sudo apt-get install -y libgbm-dev
           npx puppeteer browsers install chrome
@@ -46,5 +45,6 @@ jobs:
           S3_FORCE_PATH_STYLE: ${{ vars.S3_FORCE_PATH_STYLE }}
         run: |
           cd betty/
+          bun remove puppeteer
           bun i
           bun scripts/render.ts
